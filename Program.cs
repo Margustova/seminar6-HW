@@ -1,25 +1,25 @@
 ﻿// Семинар 6 Двумерные массивы и Рекурсия
 // Задача 1: напишите программу, которая перевернет одномерный массив (порследний элемент будет первый, 
 //а первый на последнем месте и тд)
-int[] CreateRandomArray(int size, int minValue, int maxValue) // размер массива, максимальное значение и минимальное
-{
-    int[] array = new int[size]; // выделяем память под массив- надо запомнить, имя массива (array), тип массива int, размер массива size
+// int[] CreateRandomArray(int size, int minValue, int maxValue) // размер массива, максимальное значение и минимальное
+// {
+//     int[] array = new int[size]; // выделяем память под массив- надо запомнить, имя массива (array), тип массива int, размер массива size
     
-    for(int i = 0; i < size; i++) //  при работе с массивом, это всегда цикл, i- индекс
-        array[i] = new Random().Next(minValue, maxValue + 1);
+//     for(int i = 0; i < size; i++) //  при работе с массивом, это всегда цикл, i- индекс
+//         array[i] = new Random().Next(minValue, maxValue + 1);
 
-    return array; // возвращаем массив, пишем только его имя!
-}
- void ShowArray(int[] array) // войтовский метод будем вызывать массив
- {
-    Console.Write("Array is: "); // красивая финтифлюшка для вывода массива
+//     return array; // возвращаем массив, пишем только его имя!
+// }
+//  void ShowArray(int[] array) // войтовский метод будем вызывать массив
+//  {
+//     Console.Write("Array is: "); // красивая финтифлюшка для вывода массива
     
-    for (int i =0; i < array.Length; i++) // обращаемся к длине массива
-        Console.Write(array[i] + " ");
+//     for (int i =0; i < array.Length; i++) // обращаемся к длине массива
+//         Console.Write(array[i] + " ");
 
-    Console.WriteLine(" ;) \n"); // \n  переход на новую строку
+//     Console.WriteLine(" ;) \n"); // \n  переход на новую строку
 
- }
+//  }
  
 //  void ReverseArray(int[] array)
 //  {
@@ -95,4 +95,31 @@ int[] CreateRandomArray(int size, int minValue, int maxValue) // размер м
 // ShowArray(myArray);
 // ShowArray(Copy(myArray));
 
-// Напишите программу, которая принимает на вход 3 числа и проверяет, может ли существовать треугольник со сторонами такой длины
+// // Напишите программу, которая принимает на вход 3 числа и проверяет, может ли существовать треугольник со сторонами такой длины
+// bool Triangle(int a, int b, int c)
+// {
+//     int sumab = a+b;
+//     int sumbc = b+c;
+//     int sumca = c+a;
+//     // if ( sumab> c && sumbc > a && sumca > b)
+//     // {
+//     //     return true;
+//     // }
+//     // else return false;
+//     return sumab> c && sumbc > a && sumca > b; // будет тоже самое, что if
+ 
+// }
+// Console.Write("Input a: ");
+// int a = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input b: ");
+// int b = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input c: ");
+// int c = Convert.ToInt32(Console.ReadLine());
+// bool x= a>b; //булевую величину можно отправлять без if и тд
+// if(x)
+// {
+//     Console.WriteLine();
+// }
+// Console.WriteLine(Triangle(a , b, c));
+ 
+ 

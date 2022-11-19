@@ -127,26 +127,57 @@
 // 0, 7, 8, -2, -2 -> 2
 // решаем без массивов через счетчик, проверяя, что число больше 0
 
-int PositiveDigit(int m)
-{
-    int count =0;
-    int num;
-    for (int dig=0; dig <m; dig++)
-    {
-        Console.Write("Введите число: ");
-        num = Convert.ToInt32(Console.ReadLine());
-        if(num > 0)
-        count++;
-    }
-    return count;
-}
-Console.Write("Сколько чисел: ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.Write(PositiveDigit(m));
+// int PositiveDigit(int m)
+// {
+//     int count =0; //счетчик положительных чисел
+//     int num; // числа, которые вводит пользователь
+//     for (int dig=0; dig <m; dig++) //считаем сколько чисел до m
+//     {
+//         Console.Write("Введите число: ");
+//         num = Convert.ToInt32(Console.ReadLine());
+//         if(num > 0)
+//         count++;
+//     }
+//     return count;
+// }
+// Console.Write("Сколько чисел: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write(PositiveDigit(m));
 
 
-// 1, -7, 567, 89, 223-> 3
-
-// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
-
+// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями 
+// y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+
+int PointIntersectionX(int b1, int b2, int k1, int k2)
+{
+    int x;
+   
+    //y = k1 * x + b1; //прямая 1
+    //y = k2 * x + b2; // прямая 2
+    
+//Если M0 является точкой пересечения прямых a и b, то по определению она принадлежит и прямой a и прямой b,
+// то есть, ее координаты должны удовлетворять одновременно и уравнению формула и уравнению формула. 
+//Следовательно, нам нужно подставить координаты точки М0 в уравнения заданных прямых и посмотреть, 
+//получаются ли при этом два верных равенства. Если координаты точки М0 удовлетворяют обоим уравнениям формула и формула,
+// то формула – точка пересечения прямых a и b, в противном случае М0 не является точкой пересечения прямых.
+    x = (b2-b1) / (k1-k2);
+     return x; //находим координату x
+} 
+
+int PointIntersectionY(int x, int b1, int k1)
+{
+    int y;     
+    y = k1 *x + b1; // находим координату y
+    return y;
+}
+Console.WriteLine("Input b1: ");
+int b1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input b2: ");
+int b2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input k1: ");
+int k1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input k2: ");
+int k2 = Convert.ToInt32(Console.ReadLine());
+int x = PointIntersectionX(b1, b2, k1, k2);
+Console.WriteLine(x+" "+PointIntersectionY(x, b1,k1));
